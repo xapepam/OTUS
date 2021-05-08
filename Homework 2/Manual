@@ -1,0 +1,11 @@
+1. Необходимо установить Postgres
+    a) Ставим helm: 
+        wget https://get.helm.sh/helm-v3.5.4-linux-amd64.tar.gz
+        tar -zxvf helm-v3.5.4-linux-amd64.tar.gz
+        sudo mv linux-amd64/helm /usr/local/bin/helm
+    b) Добавляем репозиторий Bitnami:
+        helm repo add bitnami https://charts.bitnami.com/bitnami
+    c) Устанавливаем Postgres, предварительно создав файл pg_values.yaml, ключи в котором говорят сами за себя
+        helm install postgres bitnami/postgresql -f pg_values.yaml
+2. Запускаем kubectl apply -f .
+3. Используем postman collections для проверки работы приложения.

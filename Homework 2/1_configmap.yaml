@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homework2-config
+  namespace: testing3
+data:
+  GREETING: Bonjour!

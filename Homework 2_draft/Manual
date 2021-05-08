@@ -1,0 +1,17 @@
+1. Необходимо установить Postgres
+    a) Ставим helm: 
+        wget https://get.helm.sh/helm-v3.5.4-linux-amd64.tar.gz
+        tar -zxvf helm-v3.5.4-linux-amd64.tar.gz
+        sudo mv linux-amd64/helm /usr/local/bin/helm
+    b) Добавляем репозиторий Bitnami:
+        helm repo add bitnami https://charts.bitnami.com/bitnami
+    c) Устанавливаем Postgres, предварительно создав файл pg_values.yaml, ключи в котором говорят сами за себя
+        helm install postgres bitnami/postgresql -f pg_values.yaml
+
+2. Ставим Scaffold (понятно, что это не продакшн решение, но для отработки и домашки - самое то, повзоляет сэкономить время)
+    a) curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+    b) sudo install skaffold /usr/local/bin/
+    c) scaffold init
+    d) scaffold run
+
+3. 

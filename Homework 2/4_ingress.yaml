@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: homework2-ingress
+  namespace: testing3
+spec:
+  rules:
+  - host: arch.homework
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: homework2-service
+            servicePort: 9000
