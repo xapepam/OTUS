@@ -4,10 +4,8 @@ postgresqlPassword: passwd
 postgresqlDatabase: myapp
 
 service:
-  type: NodePort
   port: 5432
-  nodePort: 30000
 
 persistence:
-  enabled: true
+  enabled: false
   size: 1Gi

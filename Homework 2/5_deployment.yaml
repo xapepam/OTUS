@@ -15,7 +15,7 @@ spec:
        spec:
           containers:
           - name: homework2-py
-            image: homework2-py:v1
+            image: xapepama/homework2-py:v1
             env:
               - name: DATABASE_URI
                 valueFrom:

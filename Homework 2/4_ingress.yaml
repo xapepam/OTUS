@@ -8,7 +8,15 @@ spec:
   - host: arch.homework
     http:
       paths:
-        - path: /
+        - path: /list
+          backend:
+            serviceName: homework2-service
+            servicePort: 9000
+        - path: /create
+          backend:
+            serviceName: homework2-service
+            servicePort: 9000
+        - path: /delete
           backend:
             serviceName: homework2-service
             servicePort: 9000

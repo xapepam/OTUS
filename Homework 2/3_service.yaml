@@ -10,5 +10,3 @@ spec:
     - protocol: TCP
       port: 9000
       targetPort: web
-      nodePort: 30001
-  type: NodePort
