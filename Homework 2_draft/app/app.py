@@ -41,6 +41,18 @@ def create():
         result = connection.execute("insert into clients (name) values ('{}');".format(clientname))
         rows = [dict(r.items()) for r in result]
     return json.dumps(rows)
+
+@app.route('/edit')
+def edit():
+    from sqlalchemy import create_engine
+    newclientname = request.args.get('newclientname')
+    clientid = request.args.get('clientid')
+    engine = create_engine(config['DATABASE_URI'], echo=True)
+    rows = []
+    with engine.connect() as connection:
+        result = connection.execute("update clients set name='{}' where id='{}';".format(newclientname,clientid))
+        rows = [dict(r.items()) for r in result]
+    return json.dumps(rows)
  
 @app.route('/delete')
 def delete():
