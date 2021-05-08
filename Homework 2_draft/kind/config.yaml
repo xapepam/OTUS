@@ -2,6 +2,12 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
   extraPortMappings:
   - containerPort: 30000
     hostPort: 30000
@@ -9,10 +15,14 @@ nodes:
     protocol: tcp # Optional, defaults to tcp
   - containerPort: 30001
     hostPort: 30001
-    listenAddress: "0.0.0.0" # Optional, defaults to "0.0.0.0"
-    protocol: tcp # Optional, defaults to tcp
+    listenAddress: "0.0.0.0"
+    protocol: tcp
   - containerPort: 80
     hostPort: 80
-    listenAddress: "0.0.0.0" # Optional, defaults to "0.0.0.0"
-    protocol: tcp # Optional, defaults to tcp
+    listenAddress: "0.0.0.0"
+    protocol: tcp
+  - containerPort: 443
+    hostPort: 443
+    listenAddress: "0.0.0.0"
+    protocol: tcp
 - role: worker
