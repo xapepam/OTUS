@@ -73,6 +73,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "edit client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/edit?newclientname=Jonatan&clientid=3",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"edit"
+					],
+					"query": [
+						{
+							"key": "newclientname",
+							"value": "Jonatan"
+						},
+						{
+							"key": "clientid",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
