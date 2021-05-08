@@ -16,6 +16,10 @@ spec:
           backend:
             serviceName: homework2-service
             servicePort: 9000
+        - path: /edit
+          backend:
+            serviceName: homework2-service
+            servicePort: 9000
         - path: /delete
           backend:
             serviceName: homework2-service
