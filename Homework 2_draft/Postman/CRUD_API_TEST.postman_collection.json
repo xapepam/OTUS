@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b7090c83-f5c8-43fb-96fa-ae64819620a1",
+		"_postman_id": "c43277e5-c6d0-4e27-81ed-2be8d341e9eb",
 		"name": "CRUD_API_TEST",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -103,6 +103,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
