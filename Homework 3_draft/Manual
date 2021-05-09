@@ -14,5 +14,13 @@
     c) scaffold init
     d) scaffold run
 
-3. kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+3. Ставим если нужно Ingress (в моем случае для kind)
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
 
+4. Ставим Prometheus:
+    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+    helm repo add stable https://charts.helm.sh/stable
+    helm repo update
+    kubectl apply -f k8s/namespace.yaml
+    helm install prom prometheus-community/kube-prometheus-stack -f prometheus/prometheus.yaml --atomic -n monitoring
+    

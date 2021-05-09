@@ -16,3 +16,4 @@ deploy:
     - k8s/secret.yaml
     - k8s/deployment.yaml
     - k8s/service.yaml
+    - k8s/namespace.yaml
