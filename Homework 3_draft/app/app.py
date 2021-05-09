@@ -3,6 +3,7 @@ import json
  
 from flask import Flask
 from flask import request
+from metrics import register_metrics
 
 app = Flask(__name__)
  
@@ -65,5 +66,11 @@ def delete():
         rows = [dict(r.items()) for r in result]
     return json.dumps(rows)
 
+@app.route('/metrics')
+def metrics():
+    from prometheus_client import generate_latest
+    return generate_latest()
+ 
 if __name__ == "__main__":
+    register_metrics(app)
     app.run(host='0.0.0.0', port='80', debug=True)

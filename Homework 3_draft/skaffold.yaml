@@ -11,6 +11,7 @@ build:
 deploy:
   kubectl:
     manifests:
+    - k8s/servicemonitor.yaml
     - k8s/ingress.yaml
     - k8s/configmap.yaml
     - k8s/secret.yaml
