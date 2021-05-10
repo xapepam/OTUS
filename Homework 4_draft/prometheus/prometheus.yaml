@@ -16,8 +16,6 @@ grafana:
   ##
   defaultDashboardsEnabled: true
 
-  adminPassword: prom-operator
-
   ingress:
     enabled: true
     annotations:

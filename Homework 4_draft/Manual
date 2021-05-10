@@ -1,9 +1,13 @@
-0. При необходимости создаем кластер (или удаялем и создаем):
+1. При необходимости создаем кластер (или удаялем и создаем):
     kind delete cluster --name xapecluster
     kind create cluster --name xapecluster --config=kind/config.yaml
-1. Ставим Ingress
+
+2. Ставим Ingress
     kubectl apply -f ingress-controller/deploy.yaml
-2.
 
-
-
+3. Ставим Prometheus:
+    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+    helm repo add stable https://charts.helm.sh/stable
+    helm repo update
+    kubectl apply -f k8s/namespace.yaml -f k8s/grafana.yaml
+    helm install prom prometheus-community/kube-prometheus-stack -f prometheus/prometheus.yaml --atomic -n monitoring
