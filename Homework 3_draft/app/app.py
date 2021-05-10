@@ -40,8 +40,8 @@ def create():
     rows = []
     with engine.connect() as connection:
         result = connection.execute("insert into clients (name) values ('{}');".format(clientname))
-        rows = [dict(r.items()) for r in result]
-    return json.dumps(rows)
+        #rows = [dict(r.items()) for r in result]
+    return 'OK'
 
 @app.route('/edit')
 def edit():
@@ -52,8 +52,8 @@ def edit():
     rows = []
     with engine.connect() as connection:
         result = connection.execute("update clients set name='{}' where id='{}';".format(newclientname,clientid))
-        rows = [dict(r.items()) for r in result]
-    return json.dumps(rows)
+        #rows = [dict(r.items()) for r in result]
+    return 'OK'
  
 @app.route('/delete')
 def delete():
@@ -63,8 +63,8 @@ def delete():
     rows = []
     with engine.connect() as connection:
         result = connection.execute("DELETE FROM clients WHERE id = {};".format(clientid))
-        rows = [dict(r.items()) for r in result]
-    return json.dumps(rows)
+        #rows = [dict(r.items()) for r in result]
+    return 'OK'
 
 @app.route('/metrics')
 def metrics():

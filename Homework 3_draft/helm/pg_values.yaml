@@ -3,6 +3,10 @@ postgresqlUsername: myuser
 postgresqlPassword: passwd
 postgresqlDatabase: myapp
 
+postgresqlMaxConnections: 1000
+postgresqlPostgresConnectionLimit: 1000
+postgresqlDbUserConnectionLimit: 1000
+
 service:
   port: 5432
 
