@@ -13,3 +13,22 @@ service:
 persistence:
   enabled: false
   size: 1Gi
+
+## Configure metrics exporter
+##
+metrics:
+  enabled: true
+  # resources: {}
+  service:
+    type: ClusterIP
+    annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/port: '9187'
+    loadBalancerIP:
+  serviceMonitor:
+    enabled: true
+    additionalLabels:
+      release: prom
+    namespace: monitoring
+    interval: 30s
+    scrapeTimeout: 10s
