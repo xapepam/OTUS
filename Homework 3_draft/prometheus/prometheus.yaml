@@ -4,6 +4,10 @@ prometheus:
     serviceMonitorSelector: {}
 
 grafana:
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana-dashboard
   adminPassword: adminadmin
   enabled: true
   namespaceOverride: ""
