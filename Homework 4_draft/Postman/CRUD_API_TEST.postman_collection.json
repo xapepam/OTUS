@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "c43277e5-c6d0-4e27-81ed-2be8d341e9eb",
+		"name": "CRUD_API_TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "show client list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/list ",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"list "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add client by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/create?clientname=Konstantin",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"create"
+					],
+					"query": [
+						{
+							"key": "clientname",
+							"value": "Konstantin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete client by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/delete?clientid=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"delete"
+					],
+					"query": [
+						{
+							"key": "clientid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/edit?newclientname=Jonatan&clientid=3",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"edit"
+					],
+					"query": [
+						{
+							"key": "newclientname",
+							"value": "Jonatan"
+						},
+						{
+							"key": "clientid",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,22 @@
+apiVersion: skaffold/v2beta15
+kind: Config
+metadata:
+  name: homework-
+build:
+  artifacts:
+  - image: homework2-py
+    context: app
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - k8s/grafana.yaml
+    - k8s/servicemonitor_0.yaml
+    - k8s/servicemonitor_1.yaml
+    - k8s/ingress.yaml
+    - k8s/configmap.yaml
+    - k8s/secret.yaml
+    - k8s/deployment.yaml
+    - k8s/service.yaml
+    - k8s/namespace.yaml
