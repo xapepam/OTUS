@@ -1,0 +1,35 @@
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+
+grafana:
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana-dashboard
+  adminPassword: adminadmin
+  enabled: true
+  namespaceOverride: ""
+
+  ## Deploy default dashboards.
+  ##
+  defaultDashboardsEnabled: true
+
+  ingress:
+    enabled: true
+    annotations:
+        kubernetes.io/ingress.class: nginx
+    hosts: 
+      - grafana.arch.homework
+    path: /
+  
+prometheus:
+  ingress:
+    enabled: true
+    annotations:
+        kubernetes.io/ingress.class: nginx
+    hosts: 
+      - prometheus.arch.homework
+    path: /
+    pathType: Prefix

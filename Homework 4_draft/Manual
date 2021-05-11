@@ -11,3 +11,19 @@
     helm repo update
     kubectl apply -f k8s/namespace.yaml -f k8s/grafana.yaml
     helm install prom prometheus-community/kube-prometheus-stack -f prometheus/prometheus.yaml --atomic -n monitoring
+
+4. Создать неймспейсы для операторов:
+    kubectl apply -f namespaces.yaml (взять из форка otus-homework)
+
+5.  Разворачиваем Jaeger
+Jaeger - решение трассировки. Компоненты Istio, такие как: sidecar-контейнер, gateway, отправляют данные запросов в систему. 
+Таким образом получается полная трассировка запроса.
+
+    helm repo add jaegertracing https://jaegertracing.github.io/helm-charts
+    helm repo update
+
+    Установливаем оператор, разворачивающий Jaeger:
+    helm install --version "2.19.0" -n jaeger-operator -f jaeger/operator-values.yaml \
+    jaeger-operator jaegertracing/jaeger-operator
+
+6. 
