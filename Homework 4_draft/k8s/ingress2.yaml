@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echoserver-ingress
+  namespace: default
+spec:
+  rules:
+  - host: echoserver.arch.homework
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: echoserver
+            servicePort: 80

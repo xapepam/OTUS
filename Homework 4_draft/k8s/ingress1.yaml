@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: istio-ingress
+  namespace: kiali
+spec:
+  rules:
+  - host: kiali.arch.homework
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: kiali-nodeport
+            servicePort: 20001
