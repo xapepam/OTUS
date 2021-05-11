@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: echoserver-ingress
+  name: proxyapp-ingress
   namespace: default
 spec:
   rules:
-  - host: echoserver.arch.homework
+  - host: proxyapp.arch.homework
     http:
       paths:
         - path: /
           backend:
-            serviceName: echoserver
+            serviceName: proxy-app
             servicePort: 80
