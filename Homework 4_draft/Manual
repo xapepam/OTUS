@@ -26,4 +26,14 @@ Jaeger - решение трассировки. Компоненты Istio, та
     helm install --version "2.19.0" -n jaeger-operator -f jaeger/operator-values.yaml \
     jaeger-operator jaegertracing/jaeger-operator
 
-6. 
+6. Установить оператор, разворачивающий Istio:
+    curl -L https://istio.io/downloadIstio | sh -
+    cd istio-1.9.4
+    sudo mv bin/istioctl /usr/local/bin/istioctl
+    istioctl operator init --watchedNamespaces istio-system --operatorNamespace istio-operator
+    
+    Развернуть Istio c помощью оператора:
+    kubectl apply -f istio/istio.yaml
+    
+    Проверить состояние Istio:
+    kubectl get all -n istio-system -l istio.io/rev=default
