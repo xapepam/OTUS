@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: echoserver-ingress
   namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/upstream-vhost: echoserver.default.svc.cluster.local
+
 spec:
   rules:
   - host: echoserver.arch.homework
